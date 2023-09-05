@@ -2,54 +2,75 @@ import math
 import tkinter as tk
 
 def add():
-    a = float(num1.get())
-    b = float(num2.get())
-    result = a + b
-    result_label.config(text="Result: " + str(round(result, 2)))
+    try:
+     a = float(num1.get())
+     b = float(num2.get())
+     result = a + b
+     result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
 
 def substract():
-    a = float(num1.get())
-    b = float(num2.get())
-    result = a - b
-    result_label.config(text="Result: " + str(round(result, 2)))
+    try:
+     a = float(num1.get())
+     b = float(num2.get())
+     result = a - b
+     result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
 
 def multiply():
-    a = float(num1.get())
-    b = float(num2.get())
-    result = a * b
-    result_label.config(text="Result: " + str(round(result, 2)))
+    try:
+     a = float(num1.get())
+     b = float(num2.get())
+     result = a * b
+     result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
 
 def divide():
-    a = float(num1.get())
-    b = float(num2.get())
-    if b == 0:
+    try:
+     a = float(num1.get())
+     b = float(num2.get())
+     if b == 0:
         result_label.config(text="Cannot divide by zero")
-    else:
-     result = a / b
-     result_label.config(text="Result: " + str(round(result, 2)))
+     else:
+      result = a / b
+      result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
 
 def square():
-    a = float(num1.get())
-    result = a ** 2
-    result_label.config(text="Result: " + str(round(result, 2)))
+    try:
+     a = float(num1.get())
+     result = a ** 2
+     result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
 
 def factorial():
-    a = int(num1.get())
-    factorial = 1
-    if a < 0:
+    try:
+     a = int(num1.get())
+     factorial = 1
+     if a < 0:
         result_label.config(text="Factorial does not exist for negative numbers ")
-    elif a == 0:
+     elif a == 0:
         result_label.config(text="Factorial of zero is 1 ")
-    else:
+     else:
         for i in range(1, a + 1):
             factorial = factorial * i
         result = factorial
-    result_label.config(text="Result: " + str(round(result, 2)))
+     result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
     
 def cube():
-    a = float(num1.get())
-    result = a ** 3
-    result_label.config(text="Result: " + str(round(result, 2)))
+    try:
+     a = float(num1.get())
+     result = a ** 3
+     result_label.config(text="Result: " + str(round(result, 2)))
+    except ValueError:
+        result_label.config(text="Invalid input")
 
 window = tk.Tk()
 window.title("Basic Calculator ")
@@ -57,7 +78,7 @@ window.title("Basic Calculator ")
 label = tk.Label(window, text="Enter only First Number for single operand operations such as square, cube and factorial ")
 label.pack()
 
-label = tk.Label(window, text="ONLY USE INTEGERS AND FLOAT VALUES AS INPUTS ")
+label = tk.Label(window, text="ONLY USE INTEGERS AND FLOAT VALUES AS INPUT ")
 label.pack()
 
 instruction_label1 = tk.Label(window, text="First Number :")
