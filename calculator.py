@@ -57,6 +57,9 @@ window.title("Basic Calculator ")
 label = tk.Label(window, text="Enter only First Number for single operand operations such as square, cube and factorial ")
 label.pack()
 
+label = tk.Label(window, text="ONLY USE INTEGERS AND FLOAT VALUES AS INPUTS ")
+label.pack()
+
 instruction_label1 = tk.Label(window, text="First Number :")
 instruction_label1.pack()
 
